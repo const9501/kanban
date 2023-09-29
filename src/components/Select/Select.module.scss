@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .description {
+    font-size: 18px;
+  }
+
+  .select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 5px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid #a7a7ab;
+    color: var(--black);
+  }
+}

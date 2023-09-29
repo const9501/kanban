@@ -1,0 +1,31 @@
+.file {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+
+  .container {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+
+    &:hover svg {
+      fill: var(--primary);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: .2s;
+  }
+
+  .deleteIcon {
+    cursor: pointer;
+
+    &:hover {
+      stroke: var(--primary);
+
+    }
+  }
+}

@@ -1,0 +1,238 @@
+.card {
+  display: flex;
+  height: 600px;
+
+  .informationSection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-right: 2px solid var(--gray-background);
+    width: 600px;
+    padding-right: 20px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c1c1c1;
+      border-radius: 20px;
+    }
+
+    .header {
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-bottom: 2px solid var(--gray-background);
+      padding-bottom: 10px;
+
+      .heading {
+        padding: 0;
+        color: var(--black);
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 30px;
+        cursor: text;
+
+        &:disabled {
+          border: none;
+
+        }
+      }
+
+      .taskNumber {
+        text-decoration: underline;
+      }
+
+      span {
+        margin-right: 20px;
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+
+        &:hover {
+          stroke: #85affa;
+        }
+      }
+
+      .activeSvg {
+        stroke: var(--primary);
+      }
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: column;
+      font-weight: 500;
+      color: #767985;
+      font-size: 18px;
+      gap: 10px;
+    }
+
+    .valuesContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 18px;
+
+      .select {
+        padding: 0;
+        width: 110px;
+        text-align: left;
+
+        &:disabled {
+          border: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          cursor: text;
+        }
+      }
+    }
+
+    .select.highPriority:disabled {
+      color: #fc3737;
+    }
+
+    .select.normalPriority:disabled {
+      color: #5b96fa;
+    }
+
+    .select.lowPriority:disabled {
+      color: #7ec57e;
+    }
+
+    .descriptionTitle {
+      display: flex;
+      font-weight: 500;
+      color: #767985;
+      font-size: 18px;
+      gap: 5px;
+      margin-bottom: 10px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: #767985;
+      }
+    }
+
+    .description {
+      padding: 0 10px 0 0;
+      color: var(--black);
+      cursor: text;
+
+      &Disabled {
+        border: none;
+      }
+    }
+
+    .subTasksWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .subTaskInputWrapper {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 10px;
+
+        .subTaskBtn {
+          border: none;
+          outline: none;
+          background-color: var(--primary-light);
+          padding: 3px 4px;
+          border-radius: 5px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            background-color: #8fb8fc;
+          }
+
+          svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary);
+
+          }
+        }
+      }
+    }
+
+  }
+
+  .commentsSection {
+    width: 400px;
+    padding-left: 20px;
+    overflow: auto;
+    padding-right: 10px;
+
+    .commentInputContainer {
+
+      display: flex;
+      //flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      .commentInput {
+        padding: 0 5px;
+      }
+
+      .sendIcon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+        &:hover {
+          stroke: var(--primary);
+        }
+      }
+    }
+
+    .commentList {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c1c1c1;
+      border-radius: 20px;
+    }
+  }
+}
+
+.dNone {
+  display: none;
+}
+

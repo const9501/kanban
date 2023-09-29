@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  //gap: 10px;
+
+  .commentIcon {
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 2px;
+  }
+  
+  .replyWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    
+    .replyBtn {
+      font-size: 14px;
+      color: var(--primary);
+      cursor: pointer;
+      
+      &:hover {
+        color: var(--primary-hover);
+        text-decoration: underline;
+      }
+    }
+    
+    .separator {
+      height: 2px;
+      background-color: #d3d9ea;
+      width: 100%;
+      margin-top: 2px;
+    }
+  }
+
+  .replyInputWrapper {
+    padding-left: 20px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 15px;
+
+
+    .replyInput {
+      font-size: 16px;
+      padding: 0 0 0 5px;
+    }
+
+    .sendIcon {
+      width: 27px;
+      height: 27px;
+      cursor: pointer;
+
+      &:hover {
+        stroke: var(--primary);
+      }
+    }
+  }
+}
+
+.replyComment {
+  padding-left: 23px;
+  border-left: 2px solid #d3d9ea;
+  //margin-bottom: 15px;
+}

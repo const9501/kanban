@@ -1,0 +1,36 @@
+.button {
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button svg {
+  width: 18px;
+  height: 18px;
+  margin-top: -2px;
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}
+
+.ghost {
+  background-color: var(--primary-light);
+
+  &:hover {
+    background-color: #93bafa;
+  }
+
+}
