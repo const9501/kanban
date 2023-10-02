@@ -2,7 +2,7 @@ import styles from "./ProjectForm.module.scss";
 import Heading from "../Heading/Heading";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import React, { FormEvent, useLayoutEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { ProjectActionTypes } from "../../store/reducers/projectReducer";
 

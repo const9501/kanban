@@ -1,6 +1,5 @@
 import styles from "./TaskForm.module.scss";
 import Heading from "../Heading/Heading";
-import Input from "../Input/Input";
 import Button from "../Button/Button";
 import React, { useState } from "react";
 import {
@@ -11,11 +10,9 @@ import {
 import Select from "../Select/Select";
 import { ReactComponent as PlusIcon } from "../../assets/plusIcon.svg";
 import SubTask from "../SubTask/SubTask";
-import { ProjectActionTypes } from "../../store/reducers/projectReducer";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { selectQueueTasks } from "../../store/selectors/taskSelectors";
 import Textarea from "../Textarea/Textarea";
 import FilePicker from "../FilePicker/FilePicker";
 

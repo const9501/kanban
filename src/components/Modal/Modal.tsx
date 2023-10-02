@@ -1,5 +1,5 @@
 import styles from "./Modal.module.scss";
-import {DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect} from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect } from "react";
 import cn from "classnames";
 import { ReactComponent as PlusIcon } from "../../assets/plusIcon.svg";
 
@@ -27,9 +27,9 @@ const Modal = ({
 
   useEffect(() => {
     document.onkeydown = (event) => {
-      event.key=== 'Escape' && handleCloseModal()
-    }
-  }, [])
+      event.key === "Escape" && handleCloseModal();
+    };
+  }, []);
 
   return (
     <div

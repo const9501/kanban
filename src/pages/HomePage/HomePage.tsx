@@ -4,7 +4,7 @@ import { ReactComponent as PlusIcon } from "../../assets/plusIcon.svg";
 import styles from "./HomePage.module.scss";
 import Card from "../../components/Card/Card";
 import Modal from "../../components/Modal/Modal";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import ProjectForm from "../../components/ProjectForm/ProjectForm";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { Link } from "react-router-dom";
@@ -61,7 +61,7 @@ const HomePage = () => {
       </div>
 
       <div className={styles.board}>
-        {projects.length ?
+        {projects.length ? (
           projects.map((proj) => (
             <Link className={styles.link} to={proj.id} key={proj.id}>
               <Card
@@ -72,9 +72,10 @@ const HomePage = () => {
                 className={styles.card}
               />
             </Link>
-          )) :
-            <Heading tag='h3'>Проектов пока нет</Heading>
-        }
+          ))
+        ) : (
+          <Heading tag="h3">Проектов пока нет</Heading>
+        )}
       </div>
 
       <Modal

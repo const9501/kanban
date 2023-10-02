@@ -2,8 +2,6 @@ import styles from "./Textarea.module.scss";
 
 import React, {
   DetailedHTMLProps,
-  FC,
-  InputHTMLAttributes,
   TextareaHTMLAttributes,
   useEffect,
   useRef,

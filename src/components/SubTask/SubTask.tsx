@@ -1,8 +1,6 @@
 import styles from "./SubTask.module.scss";
 import React, { useEffect, useState } from "react";
-import { ReactComponent as EditIcon } from "../../assets/editIcon.svg";
 import { ReactComponent as DeleteIcon } from "../../assets/deleteIcon.svg";
-import Input from "../Input/Input";
 import cn from "classnames";
 import Textarea from "../Textarea/Textarea";
 import { ISubTask } from "../../store/reducers/taskReducer";

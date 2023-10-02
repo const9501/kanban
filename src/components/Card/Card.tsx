@@ -24,7 +24,7 @@ const Card = ({
   description,
   priority,
   onDelete,
-                className,
+  className,
   ...props
 }: ICardProps) => {
   return (

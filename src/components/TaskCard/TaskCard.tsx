@@ -2,7 +2,6 @@ import styles from "./TaskCard.module.scss";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { selectSingleTasks } from "../../store/selectors/taskSelectors";
 import React, { useEffect, useState } from "react";
-import Heading from "../Heading/Heading";
 import cn from "classnames";
 import { ReactComponent as DocumentIcon } from "../../assets/documentIcon.svg";
 import { ReactComponent as PlusIcon } from "../../assets/plusIcon.svg";
@@ -17,7 +16,6 @@ import {
   ISubTask,
   TaskActionTypes,
 } from "../../store/reducers/taskReducer";
-import Button from "../Button/Button";
 import Comment from "../Comment/Comment";
 import { ReactComponent as SendIcon } from "../../assets/sendIcon.svg";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
@@ -132,16 +130,6 @@ const TaskCard = ({ id, setOpenTask, setOpen }: ITaskCardProps) => {
   const addReplyComment = (comment: IComment) => {
     if (task) {
       setTask({ ...task, comments: [...task.comments, comment] });
-    }
-  };
-
-  const handleSave = () => {
-    if (task) {
-      if (disabled) {
-        setDisabled(!disabled);
-      } else {
-        setDisabled(!disabled);
-      }
     }
   };
 

@@ -169,16 +169,16 @@ const BoardPage = () => {
 
   const getColumnName = (name: string) => {
     switch (name) {
-      case 'Queue':
-        return 'Очередь'
-      case 'Development':
-        return 'В работе'
-      case 'Done':
-        return 'Готово'
+      case "Queue":
+        return "Очередь";
+      case "Development":
+        return "В работе";
+      case "Done":
+        return "Готово";
       default:
-        return ''
+        return "";
     }
-  }
+  };
 
   return (
     <div className={styles.boardPage}>

@@ -1,5 +1,5 @@
 import styles from "./Input.module.scss";
-import { DetailedHTMLProps, FC, InputHTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 import cn from "classnames";
 
 interface IInputProps

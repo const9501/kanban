@@ -240,10 +240,12 @@
     flex-direction: column;
     gap: 30px;
     align-items: flex-start;
+    height: auto;
 
     .commentsSection {
       width: 100%;
       padding: 0;
+      overflow: hidden;
     }
 
     .informationSection {
@@ -251,6 +253,7 @@
       border-right: none;
       border-bottom: 2px solid var(--gray-background);
       padding-bottom: 20px;
+      overflow: hidden;
     }
   }
 }
