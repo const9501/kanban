@@ -10,24 +10,24 @@
     margin-right: 10px;
     margin-top: 2px;
   }
-  
+
   .replyWrapper {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
-    
+
     .replyBtn {
       font-size: 14px;
       color: var(--primary);
       cursor: pointer;
-      
+
       &:hover {
         color: var(--primary-hover);
         text-decoration: underline;
       }
     }
-    
+
     .separator {
       height: 2px;
       background-color: #d3d9ea;
@@ -42,7 +42,6 @@
     gap: 5px;
     align-items: center;
     margin-bottom: 15px;
-
 
     .replyInput {
       font-size: 16px;

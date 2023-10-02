@@ -1,11 +1,18 @@
 .homePage {
-
   .header {
     display: flex;
     gap: 30px;
     align-items: center;
     border-bottom: 2px solid var(--gray-background);
     padding-bottom: 20px;
+  }
+
+  @media (max-width: 450px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
 
   .board {
@@ -18,6 +25,22 @@
     justify-items: center;
     row-gap: 40px;
     column-gap: 20px;
+    
+    
   }
+
+  @media (max-width: 450px) {
+
+    .link, .card {
+      width: 100%;
+    }
+
+    .board {
+      grid-template-columns: auto;
+    }
+
 }
 
+
+
+}

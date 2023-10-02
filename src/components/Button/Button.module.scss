@@ -5,10 +5,11 @@
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  transition: all .2s;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   gap: 5px;
+  white-space: nowrap;
 }
 
 .button svg {
@@ -32,5 +33,4 @@
   &:hover {
     background-color: #93bafa;
   }
-
 }

@@ -1,5 +1,4 @@
 .modal {
-
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -9,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .2s;
+  transition: 0.2s;
   opacity: 0;
   pointer-events: none;
 
@@ -19,12 +18,18 @@
     border-radius: 20px;
     background-color: #fff;
     width: fit-content;
-    transform: scale(.5);
-    transition: .3s;
+    transform: scale(0.5);
+    transition: 0.3s;
+  }
+
+  @media (max-width: 550px) {
+    .modalContent {
+      padding: 20px;
+    }
   }
 
   .modalContent.open {
-    transform: scale(1)
+    transform: scale(1);
   }
 
   .closeModal {
@@ -39,7 +44,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+
     &:hover {
       background-color: #8fb8fc;
     }
@@ -51,8 +56,6 @@
     stroke: var(--primary);
     transform: rotate(45deg);
   }
-
-
 }
 
 .modal.open {

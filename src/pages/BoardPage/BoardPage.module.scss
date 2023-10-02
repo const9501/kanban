@@ -1,19 +1,74 @@
 .boardPage {
-
   .header {
     display: flex;
-    gap: 30px;
     align-items: center;
+    justify-content: space-between;
+    gap: 40px;
     border-bottom: 2px solid var(--gray-background);
     padding-bottom: 20px;
+
+    .container {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+    }
+
+    .searchWrapper {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #a7a7ab;
+      min-width: 250px;
+
+      .searchIcon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .searchInput {
+        border: none;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .notify {
+    margin-top: 20px;
   }
 
   .board {
     margin-top: 30px;
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
     background-color: var(--white);
     display: flex;
     gap: 50px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c1c1c1;
+      border-radius: 20px;
+    }
 
     .column {
       display: flex;
@@ -27,11 +82,10 @@
       height: fit-content;
 
       .columnHeader {
-          color: #5f6682;
+        color: #5f6682;
         display: flex;
         align-items: center;
         gap: 20px;
-
 
         .count {
           background-color: #dfe1e7;
@@ -40,7 +94,6 @@
           font-weight: 500;
         }
       }
-
 
       .columnBody {
         display: flex;
@@ -51,3 +104,9 @@
   }
 }
 
+
+@media(max-width: 450px) {
+  .taskCard {
+    width: 250px;
+  }
+}

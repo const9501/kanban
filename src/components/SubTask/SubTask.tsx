@@ -1,26 +1,29 @@
 import styles from "./SubTask.module.scss";
-import React, {useEffect, useState} from "react";
-import {ReactComponent as EditIcon} from "../../assets/editIcon.svg"
-import {ReactComponent as DeleteIcon} from "../../assets/deleteIcon.svg"
+import React, { useEffect, useState } from "react";
+import { ReactComponent as EditIcon } from "../../assets/editIcon.svg";
+import { ReactComponent as DeleteIcon } from "../../assets/deleteIcon.svg";
 import Input from "../Input/Input";
 import cn from "classnames";
 import Textarea from "../Textarea/Textarea";
-import {ISubTask} from "../../store/reducers/taskReducer";
+import { ISubTask } from "../../store/reducers/taskReducer";
 
 interface ISubTaskProps {
-  task: ISubTask,
-  removeSubTask?: (id: string) => void
-  isDisabled?: boolean
-  editSubTask?: any
+  task: ISubTask;
+  removeSubTask?: (id: string) => void;
+  isDisabled?: boolean;
+  editSubTask?: any;
 }
 
-
-const SubTask = ({task, removeSubTask, isDisabled, editSubTask}: ISubTaskProps) => {
-
-  const [value, setValue] = useState(task)
+const SubTask = ({
+  task,
+  removeSubTask,
+  isDisabled,
+  editSubTask,
+}: ISubTaskProps) => {
+  const [value, setValue] = useState(task);
 
   useEffect(() => {
-    editSubTask(value)
+    editSubTask(value);
   }, [value]);
 
   return (
@@ -29,33 +32,31 @@ const SubTask = ({task, removeSubTask, isDisabled, editSubTask}: ISubTaskProps) 
         type="checkbox"
         checked={value.completed}
         onChange={(event) => {
-          setValue({...task, completed: event.target.checked})
+          setValue({ ...task, completed: event.target.checked });
         }}
         className={styles.checkbox}
       />
 
       <Textarea
         value={value.task}
-        onChange={event => {
-          setValue({...task, task: event.target.value})
+        onChange={(event) => {
+          setValue({ ...task, task: event.target.value });
         }}
         disabled={isDisabled}
         className={cn(styles.textarea, {
-            [styles.disabledTextarea]: isDisabled
+          [styles.disabledTextarea]: isDisabled,
         })}
       />
 
-      {
-        !isDisabled &&
-				<DeleteIcon
-					title='Удалить'
-					className={styles.svg}
-					onClick={() => removeSubTask && removeSubTask(task.id)}
-				/>
-      }
-
+      {!isDisabled && (
+        <DeleteIcon
+          title="Удалить"
+          className={styles.svg}
+          onClick={() => removeSubTask && removeSubTask(task.id)}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default SubTask;

@@ -25,7 +25,6 @@
     }
 
     .header {
-
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -42,7 +41,6 @@
 
         &:disabled {
           border: none;
-
         }
       }
 
@@ -72,7 +70,6 @@
     .container {
       display: flex;
       gap: 30px;
-
     }
 
     .titleContainer {
@@ -149,7 +146,6 @@
       gap: 20px;
 
       .subTaskInputWrapper {
-
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -174,12 +170,10 @@
             width: 18px;
             height: 18px;
             stroke: var(--primary);
-
           }
         }
       }
     }
-
   }
 
   .commentsSection {
@@ -189,7 +183,6 @@
     padding-right: 10px;
 
     .commentInputContainer {
-
       display: flex;
       //flex-direction: column;
       align-items: flex-start;
@@ -230,9 +223,50 @@
       border-radius: 20px;
     }
   }
+
+  @media (max-width: 1200px) {
+    .informationSection {
+      width: 400px;
+    }
+    .commentsSection {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 600px;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+
+    .commentsSection {
+      width: 100%;
+      padding: 0;
+    }
+
+    .informationSection {
+      width: 100%;
+      border-right: none;
+      border-bottom: 2px solid var(--gray-background);
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .card {
+    width: 300px;
+  }
 }
 
 .dNone {
   display: none;
 }
-

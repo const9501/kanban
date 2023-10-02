@@ -1,55 +1,67 @@
-import styels from "./Card.module.scss";
+import styles from "./Card.module.scss";
 import Heading from "../Heading/Heading";
-import {ReactComponent as DocumentIcon} from "../../assets/documentIcon.svg"
-import {ReactComponent as EditIcon} from "../../assets/editIcon.svg"
-import {DetailedHTMLProps, HTMLAttributes} from "react";
+import { ReactComponent as DocumentIcon } from "../../assets/documentIcon.svg";
+import { ReactComponent as PlusIcon } from "../../assets/plusIcon.svg";
+import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 import cn from "classnames";
 
-interface ICardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  title: string
-  description: string
-  priority?: 'low' | 'normal' | 'high'
+interface ICardProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  id: string;
+  title: string;
+  description: string;
+  priority?: "low" | "normal" | "high";
+  onDelete?: (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    id: string,
+    title?: string,
+  ) => void;
 }
 
-const Card = ({title, description, priority, ...props}: ICardProps) => {
+const Card = ({
+  id,
+  title,
+  description,
+  priority,
+  onDelete,
+                className,
+  ...props
+}: ICardProps) => {
   return (
-    <div className={styels.card} {...props}>
-
-
-      <div className={styels.title}>
-        <Heading tag='h3'>{title}</Heading>
-        {/*<div>*/}
-        {/*  <EditIcon/>*/}
-        {/*</div>*/}
+    <div className={cn(styles.card, className)} {...props}>
+      <div className={styles.title}>
+        <Heading tag="h3">{title}</Heading>
+        {onDelete && (
+          <div title="Удалить" onClick={(event) => onDelete(event, id, title)}>
+            <PlusIcon />
+          </div>
+        )}
       </div>
 
-      {
-        priority && <div className={cn(styels.priority, {
-          [styels.priorityHigh]: priority === "high",
-          [styels.priorityNormal]: priority === "normal",
-          [styels.priorityLow]: priority === "low"
-        })}></div>
-      }
+      {priority && (
+        <div
+          className={cn(styles.priority, {
+            [styles.priorityHigh]: priority === "high",
+            [styles.priorityNormal]: priority === "normal",
+            [styles.priorityLow]: priority === "low",
+          })}
+        ></div>
+      )}
 
-
-      {
-        description ?
-          <>
-            <div className={styels.descriptionTitle}>
-              <DocumentIcon/> <span>ОПИСАНИЕ</span>
-            </div>
-            <div className={styels.descriptionText}>
-              {description}
-            </div>
-          </> :
-          <div className={styels.descriptionTitle}>
-            <DocumentIcon/> <span>ОПИСАНИЕ ПУСТОЕ</span>
+      {description ? (
+        <>
+          <div className={styles.descriptionTitle}>
+            <DocumentIcon /> <span>ОПИСАНИЕ</span>
           </div>
-      }
-
-
+          <div className={styles.descriptionText}>{description}</div>
+        </>
+      ) : (
+        <div className={styles.descriptionTitle}>
+          <DocumentIcon /> <span>ОПИСАНИЕ ПУСТОЕ</span>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default Card;

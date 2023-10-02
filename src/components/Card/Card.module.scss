@@ -6,7 +6,7 @@
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
   width: 300px;
   height: 100%;
   box-shadow: 2px 2px 8px 0px rgba(34, 60, 80, 0.2);
@@ -21,12 +21,14 @@
     gap: 10px;
 
     svg {
-      width: 20px;
-      height: 20px;
-      transition: .2s;
+      width: 25px;
+      height: 25px;
+      transition: 0.2s;
+      transform: rotate(45deg);
+      stroke: var(--primary-light);
 
       &:hover {
-        stroke: var(--black);
+        stroke: var(--primary);
       }
     }
   }
@@ -47,8 +49,6 @@
       background-color: #7ec57e;
     }
   }
-
-
 
   .descriptionTitle {
     display: flex;

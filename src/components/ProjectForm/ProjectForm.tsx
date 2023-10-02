@@ -2,20 +2,18 @@ import styles from "./ProjectForm.module.scss";
 import Heading from "../Heading/Heading";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import React, {FormEvent, useLayoutEffect, useRef, useState} from "react";
-import {useAppDispatch} from "../../hooks/useAppDispatch";
-import {ProjectActionTypes} from "../../store/reducers/projectReducer";
+import React, { FormEvent, useLayoutEffect, useRef, useState } from "react";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { ProjectActionTypes } from "../../store/reducers/projectReducer";
 
-
-const ProjectForm = ({setOpen}: {setOpen: (open: boolean) => void}) => {
-
-  const dispatch = useAppDispatch()
-  const [title, setTitle] = useState<string>('')
-  const [description, setDescription] = useState<string>('')
-  const [inputError, setInputError] = useState(false)
+const ProjectForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
+  const dispatch = useAppDispatch();
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [inputError, setInputError] = useState(false);
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
+    event.preventDefault();
 
     if (title.trim()) {
       dispatch({
@@ -23,38 +21,39 @@ const ProjectForm = ({setOpen}: {setOpen: (open: boolean) => void}) => {
         payload: {
           id: crypto.randomUUID(),
           title: title,
-          description: description
-        }
-      })
+          description: description,
+        },
+      });
 
-      setTitle('')
-      setDescription('')
-      setInputError(false)
-      setOpen(false)
+      setTitle("");
+      setDescription("");
+      setInputError(false);
+      setOpen(false);
     } else {
-      setTitle('')
-      setInputError(true)
+      setTitle("");
+      setInputError(true);
     }
-  }
+  };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <Heading tag='h2'>Новый проект</Heading>
+      <Heading tag="h2">Новый проект</Heading>
       <Input
         error={inputError}
         value={title}
         onChange={(event) => setTitle(event.target.value)}
-        placeholder='Название проекта*'
+        placeholder="Название проекта*"
       />
       <Input
         value={description}
         onChange={(event) => setDescription(event.target.value)}
-        placeholder='Краткое описание'
+        placeholder="Краткое описание"
       />
-      <Button type='submit' variant='primary'>Создать</Button>
+      <Button type="submit" variant="primary">
+        Создать
+      </Button>
     </form>
   );
-}
-
+};
 
 export default ProjectForm;
