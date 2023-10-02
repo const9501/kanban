@@ -12,24 +12,7 @@ interface IRemoveProjectAction {
 
 type ProjectActionType = IAddProjectAction | IRemoveProjectAction;
 
-const initialState: IProject[] = [
-  {
-    id: "1",
-    title: "Канбан доска",
-    description:
-      "Сделать тестовое задание на позицию реакт джун -  канбан доску",
-  },
-  {
-    id: "2",
-    title: "Диплом",
-    description: 'Написать дисертацию магистра на тему "хзхз"',
-  },
-  {
-    id: "3",
-    title: "TODO List react + typescript + redux",
-    description: "",
-  },
-];
+const initialState: IProject[] = [];
 
 export const projectReducer = (
   state = initialState,
