@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kanban/static/css/main.4ff8a5cd.css",
+    "main.css": "/kanban/static/css/main.66e64acf.css",
     "main.js": "/kanban/static/js/main.ccebc080.js",
     "static/media/commentIcon.svg": "/kanban/static/media/commentIcon.f4d70c1451e410e738928f9c54c4d9ff.svg",
     "static/media/uploadFileIcon.svg": "/kanban/static/media/uploadFileIcon.069ea3ca7c7d759c690977373e45e910.svg",
@@ -12,11 +12,11 @@
     "static/media/documentIcon.svg": "/kanban/static/media/documentIcon.aee30fa355dcd8d4e2414f89739745ac.svg",
     "static/media/searchIcon.svg": "/kanban/static/media/searchIcon.1f7ec7a671c42ec07b83204aac58cd07.svg",
     "static/media/plusIcon.svg": "/kanban/static/media/plusIcon.27b97215a8fe44196e148b846b7fe830.svg",
-    "main.4ff8a5cd.css.map": "/kanban/static/css/main.4ff8a5cd.css.map",
+    "main.66e64acf.css.map": "/kanban/static/css/main.66e64acf.css.map",
     "main.ccebc080.js.map": "/kanban/static/js/main.ccebc080.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ff8a5cd.css",
+    "static/css/main.66e64acf.css",
     "static/js/main.ccebc080.js"
   ]
 }
