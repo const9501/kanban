@@ -2,11 +2,7 @@ import styles from "./TaskForm.module.scss";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import React, { useState } from "react";
-import {
-  ISubTask,
-  ITask,
-  TaskActionTypes,
-} from "../../store/reducers/taskReducer";
+import { ISubTask, ITask, TaskActionTypes } from "../../types/types";
 import Select from "../Select/Select";
 import { ReactComponent as PlusIcon } from "../../assets/plusIcon.svg";
 import SubTask from "../SubTask/SubTask";

@@ -1,14 +1,4 @@
-export interface IProject {
-  // crypto.randomUUID();
-  id: string;
-  title: string;
-  description: string;
-}
-
-export enum ProjectActionTypes {
-  ADD_PROJECT = "ADD_PROJECT",
-  REMOVE_PROJECT = "REMOVE_PROJECT",
-}
+import { IProject, ProjectActionTypes } from "../../types/types";
 
 interface IAddProjectAction {
   type: ProjectActionTypes.ADD_PROJECT;

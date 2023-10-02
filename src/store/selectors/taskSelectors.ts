@@ -1,5 +1,5 @@
 import { RootState } from "../reducers/rootReducer";
-import { ITask } from "../reducers/taskReducer";
+import { ITask } from "../../types/types";
 
 export const selectQueueTasks = (
   state: RootState,
