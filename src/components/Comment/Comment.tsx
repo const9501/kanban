@@ -1,5 +1,5 @@
 import styles from "./Comment.module.scss";
-import { IComment } from "../../store/reducers/taskReducer";
+import { IComment } from "../../types/types";
 import { ReactComponent as CommentIcon } from "../../assets/commentIcon.svg";
 import { ReactComponent as SendIcon } from "../../assets/sendIcon.svg";
 import Textarea from "../Textarea/Textarea";
@@ -10,7 +10,6 @@ interface ICommentProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   comment: IRenderComments;
   addReplyComment: (comment: IComment) => void;
-  // replyComments: IComment[]
 }
 
 const Comment = ({ comment, addReplyComment, ...props }: ICommentProps) => {

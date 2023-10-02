@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as DeleteIcon } from "../../assets/deleteIcon.svg";
 import cn from "classnames";
 import Textarea from "../Textarea/Textarea";
-import { ISubTask } from "../../store/reducers/taskReducer";
+import { ISubTask } from "../../types/types";
 
 interface ISubTaskProps {
   task: ISubTask;

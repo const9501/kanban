@@ -4,7 +4,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import React, { useState } from "react";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { ProjectActionTypes } from "../../store/reducers/projectReducer";
+import { ProjectActionTypes } from "../../types/types";
 
 const ProjectForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const dispatch = useAppDispatch();

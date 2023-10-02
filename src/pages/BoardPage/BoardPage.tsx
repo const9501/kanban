@@ -13,7 +13,7 @@ import {
   Droppable,
   DropResult,
 } from "react-beautiful-dnd";
-import { TaskActionTypes } from "../../store/reducers/taskReducer";
+import { TaskActionTypes } from "../../types/types";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import Modal from "../../components/Modal/Modal";
 import TaskForm from "../../components/TaskForm/TaskForm";
@@ -116,52 +116,59 @@ const BoardPage = () => {
     for (const columnsKey in columns) {
       if (columns[columnsKey].name === "Queue") {
         columns[columnsKey].items.forEach((task, index) => {
-          dispatch({
-            type: TaskActionTypes.EDIT_TASK,
-            payload: { ...task, status: "queue", index: index, endDate: 0 },
-          });
-        });
-      } else if (columns[columnsKey].name === "Development") {
-        columns[columnsKey].items.forEach((task, index) => {
-          if (task.status === "queue") {
-            dispatch({
-              type: TaskActionTypes.EDIT_TASK,
-              payload: {
-                ...task,
-                status: "development",
-                index: index,
-                endDate: 0,
-              },
-            });
+          if (task.status !== "queue") {
+            task.status = "queue";
+            task.startDev = 0;
+            task.endDate = 0;
+          } else if (task.index === index) {
+            return;
           }
+
+          task.index = index;
           dispatch({
             type: TaskActionTypes.EDIT_TASK,
             payload: {
               ...task,
-              status: "development",
-              index: index,
-              endDate: 0,
+            },
+          });
+        });
+      } else if (columns[columnsKey].name === "Development") {
+        columns[columnsKey].items.forEach((task, index) => {
+          if (task.status !== "development") {
+            task.status = "development";
+            task.startDev = Date.now();
+            task.endDate = 0;
+          } else if (task.index === index) {
+            return;
+          }
+
+          task.index = index;
+          dispatch({
+            type: TaskActionTypes.EDIT_TASK,
+            payload: {
+              ...task,
             },
           });
         });
       } else {
         columns[columnsKey].items.forEach((task, index) => {
-          if (task.status !== "done") {
-            dispatch({
-              type: TaskActionTypes.EDIT_TASK,
-              payload: {
-                ...task,
-                status: "done",
-                index: index,
-                endDate: Date.now(),
-              },
-            });
-          } else {
-            dispatch({
-              type: TaskActionTypes.EDIT_TASK,
-              payload: { ...task, status: "done", index: index },
-            });
+          if (task.status === "development") {
+            task.workingTime = task.workingTime + (Date.now() - task.startDev);
+            task.endDate = Date.now();
+          } else if (task.status === "queue") {
+            task.endDate = Date.now();
+          } else if (task.index === index) {
+            return;
           }
+
+          task.status = "done";
+          task.index = index;
+          dispatch({
+            type: TaskActionTypes.EDIT_TASK,
+            payload: {
+              ...task,
+            },
+          });
         });
       }
     }

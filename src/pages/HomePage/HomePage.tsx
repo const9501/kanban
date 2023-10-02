@@ -10,8 +10,8 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import { Link } from "react-router-dom";
 import { selectProjects } from "../../store/selectors/projectSelectors";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { ProjectActionTypes } from "../../store/reducers/projectReducer";
-import { TaskActionTypes } from "../../store/reducers/taskReducer";
+import { ProjectActionTypes } from "../../types/types";
+import { TaskActionTypes } from "../../types/types";
 
 const HomePage = () => {
   const [modalOpen, setModalOpen] = useState(false);

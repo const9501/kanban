@@ -10,12 +10,7 @@ import { ReactComponent as EditIcon } from "../../assets/editIcon.svg";
 import Textarea from "../Textarea/Textarea";
 import Select from "../Select/Select";
 import FilePicker from "../FilePicker/FilePicker";
-import {
-  IComment,
-  IFile,
-  ISubTask,
-  TaskActionTypes,
-} from "../../store/reducers/taskReducer";
+import { IComment, IFile, ISubTask, TaskActionTypes } from "../../types/types";
 import Comment from "../Comment/Comment";
 import { ReactComponent as SendIcon } from "../../assets/sendIcon.svg";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
@@ -32,7 +27,7 @@ export interface IRenderComments {
   children: IRenderComments[];
 }
 
-function formatMilliseconds(milliseconds: number) {
+const formatMilliseconds = (milliseconds: number) => {
   let seconds = Math.floor(milliseconds / 1000);
 
   const days = Math.floor(seconds / (24 * 60 * 60));
@@ -46,19 +41,19 @@ function formatMilliseconds(milliseconds: number) {
 
   let result = "";
   if (days > 0) {
-    result += days + "д:";
+    result += days + "д ";
   }
   if (hours > 0) {
-    result += hours + "ч:";
+    result += hours + "ч ";
   }
   if (minutes > 0) {
-    result += minutes + "м:";
+    result += minutes + "м ";
   }
   if (seconds > 0) {
     result += seconds + "с";
   }
   return result.trim();
-}
+};
 
 const options = [
   { value: "low", title: "Низкий" },
@@ -162,7 +157,8 @@ const TaskCard = ({ id, setOpenTask, setOpen }: ITaskCardProps) => {
               Создана: {new Date(task.creationDate).toLocaleDateString()}
             </span>
             {task.workingTime ? (
-              <span>В работе: {task.workingTime / 1000}</span>
+              // <span>В работе: {task.workingTime / 1000}</span>
+              <span>В работе: {formatMilliseconds(task.workingTime)}</span>
             ) : null}
             {task.endDate ? (
               <span title={new Date(task.endDate).toLocaleString()}>

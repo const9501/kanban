@@ -3,7 +3,7 @@ import { ReactComponent as UploadFileIcon } from "../../assets/uploadFileIcon.sv
 import Button from "../Button/Button";
 import { ChangeEvent } from "react";
 import File from "../File/File";
-import { IFile } from "../../store/reducers/taskReducer";
+import { IFile } from "../../types/types";
 
 interface IFilePickerProps {
   selectedFiles: IFile[];
