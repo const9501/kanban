@@ -1,4 +1,4 @@
-# SPA TODO-приложение.
+# SPA TODO-приложение
 
 ### React + Typescript + Redux
 
